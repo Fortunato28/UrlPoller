@@ -42,7 +42,6 @@ std::string Stream::getline()
     ssize_t readed_bytes;
     std::string gettedLine;
     // Пока есть данные в файле или буфер не пуст
-    sleep(1);
     while((readed_bytes = read(descriptor, &buff, BUFF_SIZE)) | !lineBuff.empty())
     {
         if(readed_bytes == -1)
@@ -55,8 +54,6 @@ std::string Stream::getline()
         {
             lineBuff += buff[i];
         }
-
-        std::cout << "Zhopa zdes!" << std::endl;
 //        std::cout << "Raw string = " << lineBuff << std::endl;
 //        std::cout << "Stop!" << std::endl;
 

@@ -64,7 +64,8 @@ void Task::run()
         {
             while(true)
             {
-//                sleep(1);             // Почему-то этот слип решает проблему
+//                sleep(1);
+                // В getline() read() выпадает с ошибкой EAGAIN, а дебаг или sleep() выше почему-то решает эту проблему
                 httpResponse = sockStream.getline();
 
                 if(sockStream.eof())
