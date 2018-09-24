@@ -5,10 +5,9 @@ Stream::Stream()
     eofFlag = false;
 }
 
-Stream::Stream(int fd)// : Stream()       // Делегирование конструктора
+Stream::Stream(int fd) : Stream()       // Делегирование конструктора
 {
     setDesc(fd);
-    eofFlag = false;
 }
 
 Stream::~Stream()
